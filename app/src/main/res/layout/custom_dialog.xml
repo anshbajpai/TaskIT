@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginBottom="8dp"
+        app:cardCornerRadius="8dp"
+        app:cardElevation="4dp"
+        android:backgroundTint="#ffffff"
+        card_view:cardBackgroundColor="#ffffff">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:layout_width="150dp"
+                android:layout_height="150dp"
+                android:layout_gravity="center"
+                android:layout_marginTop="5dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/converted_settings_blue" />
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/dateInptLay"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="7dp"
+                app:boxStrokeColor="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent"
+                android:paddingTop="10dp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:hintAnimationEnabled="true"
+                android:hint="Set Date"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateEdit" >
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/dateEdit"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginEnd="16dp"
+                android:clickable="true"
+                android:cursorVisible="false"
+                android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                android:drawablePadding="8dp"
+                android:drawableTint="#356cf9"
+                android:focusable="false"
+
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:textSize="18sp"
+                android:layout_marginTop="18dp"
+                android:layout_marginBottom="18dp"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/descEt"
+                app:layout_constraintVertical_bias="0.196" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+            <com.google.android.material.textfield.TextInputLayout
+                android:id="@+id/timeInptLay"
+                style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                app:boxStrokeColor="@color/colorAccent"
+                app:hintTextColor="@color/colorAccent"
+                app:layout_constraintBottom_toTopOf="@+id/spinnerCategory"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/dateEdit"
+                app:layout_constraintVertical_bias="0.0">
+
+                <com.google.android.material.textfield.TextInputEditText
+                    android:id="@+id/timeEdt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:clickable="true"
+                    android:cursorVisible="false"
+                    android:drawableEnd="@drawable/ic_access_time_black_24dp"
+                    android:drawablePadding="8dp"
+                    android:drawableTint="#356cf9"
+                    android:focusable="false"
+                    android:hint="Set Time"
+                    android:paddingStart="8dp"
+                    android:paddingEnd="8dp"
+                    android:textSize="18sp" />
+
+
+            </com.google.android.material.textfield.TextInputLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_marginStart="16dp"
+                android:layout_height="wrap_content" >
+
+                <net.igenius.customcheckbox.CustomCheckBox
+                    android:id="@+id/customRemind"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="16dp"
+                    app:color_checked="@color/colorPrimary"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toStartOf="@id/remindTv"
+                    app:layout_constraintHorizontal_bias="0.09"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                </net.igenius.customcheckbox.CustomCheckBox>
+
+                <TextView
+                    android:id="@+id/remindTv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+
+                    android:text="Remind Me 30 mins Before"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/customRemind"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp">
+
+                <Button
+                    android:id="@+id/cancelBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginEnd="4dp"
+                    style="?attr/materialButtonOutlinedStyle"
+                    app:strokeColor = "#7E7E7E"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:background="@null"
+                    android:paddingStart="8dp"
+                    android:paddingTop="8dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="8dp"
+                    android:text="Cancel"
+                    android:textAllCaps="true"
+                    android:textColor="@color/black"
+                 />
+
+                <Button
+                    android:id="@+id/okBtn"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textColor="@color/white"
+                    app:backgroundTint="#356cf9"
+                    android:layout_marginStart="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:layout_marginBottom="16dp"
+                    android:layout_weight="1"
+                    android:text="Add" />
+            </LinearLayout>
+        </LinearLayout>
+
+
+    </androidx.cardview.widget.CardView>
+</RelativeLayout>

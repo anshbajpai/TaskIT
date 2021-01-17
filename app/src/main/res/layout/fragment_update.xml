@@ -1,0 +1,215 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+xmlns:tools="http://schemas.android.com/tools"
+android:layout_height="match_parent"
+android:layout_width="match_parent"
+xmlns:android="http://schemas.android.com/apk/res/android" >
+
+<ScrollView
+    android:id="@+id/current_scrollView2"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/current_back_nav_btn"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="19dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:src="@drawable/icons8_back_arrow"
+            app:layout_constraintBottom_toTopOf="@+id/current_titleEt"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:tint="#356cf9" />
+
+
+        <ImageView
+            android:id="@+id/current_submit_check"
+            android:layout_width="35dp"
+            android:layout_height="35dp"
+            android:layout_marginTop="7dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="19dp"
+            android:src="@drawable/ic_save"
+            app:layout_constraintBottom_toTopOf="@+id/current_titleEt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45"
+            app:tint="#356cf9" />
+
+
+        <ImageView
+            android:id="@+id/current_delete_btn"
+            android:layout_width="36dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="0dp"
+            android:src="@drawable/ic_delete"
+            app:layout_constraintBottom_toTopOf="@+id/current_titleEt"
+            app:layout_constraintEnd_toStartOf="@+id/current_submit_check"
+            app:layout_constraintHorizontal_bias="0.95"
+            app:layout_constraintStart_toEndOf="@+id/current_back_nav_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
+            app:tint="#356cf9" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/current_titleEt"
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="48dp"
+            android:layout_marginEnd="16dp"
+            android:background="#00000000"
+            android:fontFamily="@font/manrope_extrabold"
+            android:hint="Task Title"
+            android:inputType="textCapWords"
+            android:paddingStart="2dp"
+            android:paddingEnd="8dp"
+            android:textSize="28sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="1.0"
+            app:layout_constraintStart_toStartOf="parent"
+
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/current_date_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/manrope_bold"
+            android:gravity="center"
+            android:text="29 December 2020"
+            app:layout_constraintBottom_toTopOf="@+id/current_titleEt"
+            app:layout_constraintEnd_toStartOf="@+id/current_delete_btn"
+            app:layout_constraintHorizontal_bias="0.61"
+            app:layout_constraintStart_toEndOf="@+id/current_back_nav_btn"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.35000002" />
+
+
+        <ImageView
+            android:id="@+id/current_imageNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginTop="5dp"
+            android:adjustViewBounds="true"
+            app:layout_constraintBottom_toTopOf="@+id/current_descEt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_titleEt"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/current_descEt"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+
+            android:layout_marginTop="2dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="536dp"
+            android:background="@null"
+            android:fontFamily="@font/manrope_light"
+            android:gravity="start"
+            android:hint="Task Description"
+            android:inputType="textMultiLine"
+            android:minHeight="100dp"
+            android:paddingStart="2dp"
+            android:paddingEnd="8dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/current_imageNote">
+
+        </com.google.android.material.textfield.TextInputEditText>
+
+
+
+        <Spinner
+            android:id="@+id/current_spinnerCategory"
+            android:layout_width="0dp"
+            android:layout_height="60dp"
+            android:layout_marginBottom="236dp"
+            android:layout_weight="1"
+            android:entries="@array/priorities"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent" />
+
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:id="@+id/current_checkbox_edit_text"
+            style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Add List Item"
+            android:visibility="gone"
+            app:endIconMode="custom"
+            app:layout_constraintBottom_toTopOf="@id/current_checkbox_recyclerView"
+            app:endIconDrawable="@drawable/ic_add"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:endIconTint="@color/colorPrimary"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_titleEt">
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/current_editText_checkbox"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/current_checkbox_recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            tools:listitem="@layout/checklist_layout"
+            android:visibility="gone"
+            android:layout_marginTop="10dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/current_checkbox_edit_text" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</ScrollView>
+
+
+<com.google.android.material.bottomnavigation.BottomNavigationView
+    android:id="@+id/current_bottom_nav"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/rounded"
+
+    app:menu="@menu/bottom_nav_menu"
+    android:layout_gravity="bottom"
+    />
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>
+

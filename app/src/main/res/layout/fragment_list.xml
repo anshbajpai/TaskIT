@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/listLayout"
+    tools:context=".fragments.list.listFragment">
+
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="@font/manrope_extrabold"
+        android:text="Task IT"
+        android:textSize="28sp"
+        android:layout_marginStart="10dp"
+        android:textColor="#356cf9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingTop="8dp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/search_editText"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/floatingActionButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginBottom="24dp"
+        android:clickable="true"
+        android:focusable="true"
+        app:backgroundTint="#356cf9"
+        app:tint="@color/white"
+        android:src="@drawable/ic_add"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+        android:id="@+id/settings_main_btn"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:src="@drawable/settings"
+        app:layout_constraintBottom_toTopOf="@+id/search_editText"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.94"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.51"
+        app:tint="@color/colorPrimary" />
+
+    <ImageView
+        android:id="@+id/no_data_imageView"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:src="@drawable/ic_no_data"
+        android:visibility="invisible"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toTopOf="@+id/recyclerView"
+        app:layout_constraintVertical_bias="0.37" />
+
+    <TextView
+        android:id="@+id/no_data_textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:alpha="0.5"
+        android:text="@string/no_data"
+        android:visibility="invisible"
+        android:textSize="16sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="@+id/recyclerView"
+        app:layout_constraintTop_toBottomOf="@+id/no_data_imageView" />
+
+    <ImageView
+        android:id="@+id/search_btn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_marginStart="252dp"
+        android:layout_marginTop="4dp"
+        android:src="@drawable/loupe"
+        android:visibility="gone"
+        app:layout_constraintStart_toEndOf="@+id/textView"
+        app:layout_constraintTop_toTopOf="parent"
+
+
+        app:tint="@color/colorPrimary" />
+
+
+    <ImageView
+        android:id="@+id/curvedArrow"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="264dp"
+        android:orientation="horizontal"
+        android:src="@drawable/curved_arrow2"
+        android:visibility="gone"
+        app:layout_constraintEnd_toStartOf="@id/floatingActionButton"
+        app:layout_constraintBottom_toBottomOf="@+id/floatingActionButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintVertical_bias="1.0" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:id="@+id/search_editText"
+        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_marginStart="14dp"
+        android:layout_marginEnd="14dp"
+        android:hint="Search"
+        app:boxStrokeColor="@color/colorPrimary"
+        app:layout_constraintBottom_toTopOf="@+id/floatingActionButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintVertical_bias="0.0"
+        app:startIconDrawable="@drawable/ic_search"
+        app:startIconTint="@color/colorPrimary">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/search_edit_text"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:imeOptions="actionSearch"
+            android:layout_gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:strokeColor="@color/colorPrimary"
+            tools:layout_editor_absoluteY="39dp" />
+
+
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <!--    <EditText-->
+<!--        -->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="40dp"-->
+<!--        android:background="@drawable/circle_profile1"-->
+<!--        android:drawableStart="@drawable/search_icon"-->
+<!--        android:hint="Search"-->
+<!--        android:paddingStart="10dp"-->
+<!--        app:layout_constraintStart_toStartOf="parent"-->
+<!--        tools:layout_editor_absoluteY="44dp" />-->
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
