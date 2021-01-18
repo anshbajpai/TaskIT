@@ -11,6 +11,26 @@
     <string name="notification_title">Task IT</string>
     <string name="notification_subtitle">Looks like there is a Task Due</string>
 
+
+    <string name="onboarding_slide1_title">Welcome!</string>
+    <string name="onboarding_slide1_subtitle">Write down all your tasks</string>
+    <string name="onboarding_slide1_desc">Get notified and sort your tasks based on priority.</string>
+
+    <string name="onboarding_slide2_title">Welcome!</string>
+    <string name="onboarding_slide2_subtitle">Share tasks with your friends</string>
+    <string name="onboarding_slide2_desc">Just long click on your task and share them
+        easily with anyone.</string>
+
+    <string name="onboarding_slide3_title">Welcome!</string>
+    <string name="onboarding_slide3_subtitle">Make a Checklist!</string>
+    <string name="onboarding_slide3_desc">Create a checklist ,for all the tasks you need to do and get notified
+    about them </string>
+
+    <string name="onboarding_slide4_title">Welcome!</string>
+    <string name="onboarding_slide4_subtitle">Image and camera support</string>
+    <string name="onboarding_slide4_desc">Create a task and easily add images from your
+        gallery or your camera .</string>
+
     <string-array name="priorities">
         <item>High Priority</item>
         <item>Medium Priority</item>

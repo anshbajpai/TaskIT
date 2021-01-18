@@ -19,6 +19,7 @@ class DataStoreRepository(context: Context) {
     private object PreferenceKeys {
         val name = preferencesKey<String>("my_layout")
         val number = preferencesKey<Int>("my_autoNum")
+        val firstLaunch = preferencesKey<Boolean>("my_firstLaunch")
     }
 
 
@@ -29,6 +30,12 @@ class DataStoreRepository(context: Context) {
     suspend fun saveToDataStore(name: String) {
         dataStore.edit {
             it[PreferenceKeys.name] = name
+        }
+    }
+
+    suspend fun saveBolToDataStore(firstLaunch:Boolean){
+        dataStore.edit {
+            it[PreferenceKeys.firstLaunch] = firstLaunch
         }
     }
 
@@ -51,6 +58,18 @@ class DataStoreRepository(context: Context) {
             myNumber
         }
 
+    val readBolDataStore: Flow<Boolean> = dataStore.data
+        .catch { exception ->
+            if (exception is IOException) {
+                Log.d("DataStore", exception.message.toString())
+            } else {
+                throw exception
+            }
+        }
+        .map {
+            val isFirstLaunch = it[PreferenceKeys.firstLaunch] ?: true
+            isFirstLaunch
+        }
 
     val readFromDataStore: Flow<String> = dataStore.data
         .catch { exception ->

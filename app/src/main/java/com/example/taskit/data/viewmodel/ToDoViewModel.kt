@@ -28,6 +28,8 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
 
     val readIntDataStore = dataStoreRepository.readIntDataStore.asLiveData()
 
+    val readBolDataStore = dataStoreRepository.readBolDataStore.asLiveData()
+
 
     val sortByHighPriority: LiveData<List<ToDoData>>
     val sortByLowPriority: LiveData<List<ToDoData>>
@@ -56,6 +58,12 @@ class ToDoViewModel(application: Application) : AndroidViewModel(application) {
         }
 
 
+    }
+
+    fun saveBolDataStore(firstLaunch:Boolean) {
+        viewModelScope.launch(Dispatchers.IO) {
+            dataStoreRepository.saveBolToDataStore(firstLaunch)
+        }
     }
 
     fun insertData(toDoData: ToDoData) {
