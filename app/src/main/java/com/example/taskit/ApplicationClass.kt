@@ -8,7 +8,7 @@ import com.onesignal.OSSubscriptionState
 import com.onesignal.OneSignal
 
 
-const val ONESIGNAL_APP_ID = "2bfdec01-56ed-45d6-bb5c-da5412b25f45"
+const val ONESIGNAL_APP_ID = BuildConfig.ONESIGNAL_APP_ID
 
 class ApplicationClass : Application() {
     override fun onCreate() {

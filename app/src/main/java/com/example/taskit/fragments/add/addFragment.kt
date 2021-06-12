@@ -35,6 +35,7 @@ import androidx.work.Data
 import androidx.work.ExistingWorkPolicy
 import androidx.work.OneTimeWorkRequest
 import androidx.work.WorkManager
+import com.example.taskit.BuildConfig
 import com.example.taskit.R
 import com.example.taskit.data.models.TaskList
 import com.example.taskit.data.models.ToDoData
@@ -61,7 +62,7 @@ import java.util.*
 import java.util.concurrent.TimeUnit
 import javax.net.ssl.HttpsURLConnection
 
-
+const val ONESIGNAL_API_KEY = BuildConfig.ONESIGNAL_KEY
 // This is the fragment where new Tasks are added
 class addFragment : androidx.fragment.app.Fragment() {
 
@@ -535,7 +536,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                                 .method("POST", body)
                                 .addHeader(
                                     "Authorization",
-                                    "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                    "Basic {\"${ONESIGNAL_API_KEY}\"}"
                                 )
                                 .addHeader("Content-Type", "application/json")
                                 .addHeader(
@@ -574,7 +575,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                             .method("POST", body)
                             .addHeader(
                                 "Authorization",
-                                "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                "Basic {\"${ONESIGNAL_API_KEY}\"}"
                             )
                             .addHeader("Content-Type", "application/json")
                             .addHeader(
@@ -607,7 +608,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                                 .method("POST", bodyExact)
                                 .addHeader(
                                     "Authorization",
-                                    "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                    "Basic {\"${ONESIGNAL_API_KEY}\"}"
                                 )
                                 .addHeader("Content-Type", "application/json")
                                 .addHeader(
@@ -918,7 +919,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                             .method("POST", body)
                             .addHeader(
                                 "Authorization",
-                                "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                "Basic {\"${ONESIGNAL_API_KEY}\"}"
                             )
                             .addHeader("Content-Type", "application/json")
                             .addHeader(
@@ -954,7 +955,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                                 .method("POST", body)
                                 .addHeader(
                                     "Authorization",
-                                    "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                    "Basic {\"${ONESIGNAL_API_KEY}\"}"
                                 )
                                 .addHeader("Content-Type", "application/json")
                                 .addHeader(
@@ -987,7 +988,7 @@ class addFragment : androidx.fragment.app.Fragment() {
                                 .method("POST", bodyExact)
                                 .addHeader(
                                     "Authorization",
-                                    "Basic {\"YTQyNmMyZjctNDQ3ZC00ZDJmLWJkODAtYmU1MjY4ZmY4ZjBm\"}"
+                                    "Basic {\"${ONESIGNAL_API_KEY}\"}"
                                 )
                                 .addHeader("Content-Type", "application/json")
                                 .addHeader(
